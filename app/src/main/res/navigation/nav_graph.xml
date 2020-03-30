@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/viewTransactionFragment"
+        android:name="com.example.navigate.fragments.ViewTransactionFragment"
+        android:label="ViewTransactionFragment" />
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="com.example.navigate.fragments.ViewBalanceFragment"
+        android:label="ViewBalanceFragment" />
+    <fragment
+        android:id="@+id/specifyAmountFragment"
+        android:name="com.example.navigate.fragments.SpecifyAmountFragment"
+        android:label="SpecifyAmountFragment" >
+        <action
+            android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigate.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooserRecipientFragment2"
+            app:destination="@id/chooserRecipientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.navigate.fragments.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
+    <fragment
+        android:id="@+id/chooserRecipientFragment"
+        android:name="com.example.navigate.fragments.ChooserRecipientFragment"
+        android:label="ChooserRecipientFragment" >
+        <action
+            android:id="@+id/action_chooserRecipientFragment_to_specifyAmountFragment"
+            app:destination="@id/specifyAmountFragment" />
+    </fragment>
 </navigation>
