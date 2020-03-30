@@ -17,6 +17,8 @@
         android:id="@+id/specifyAmountFragment"
         android:name="com.example.navigate.fragments.SpecifyAmountFragment"
         android:label="SpecifyAmountFragment" >
+        <argument android:name="recipient"
+            android:defaultValue="None"/>
         <action
             android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
             app:destination="@id/confirmationFragment"
@@ -56,7 +58,12 @@
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.example.navigate.fragments.ConfirmationFragment"
-        android:label="ConfirmationFragment" />
+        android:label="ConfirmationFragment">
+        <argument android:name="recipient"
+            android:defaultValue="None"/>
+        <argument android:name="money"
+            android:defaultValue="com.example.navigate"/>
+    </fragment>
 
     <fragment
         android:id="@+id/chooserRecipientFragment"
